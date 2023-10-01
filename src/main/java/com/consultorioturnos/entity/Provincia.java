@@ -1,4 +1,4 @@
-package com.consultorioturnos.persistence.entity;
+package com.consultorioturnos.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

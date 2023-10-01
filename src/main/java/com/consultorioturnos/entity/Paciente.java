@@ -1,7 +1,6 @@
-package com.consultorioturnos.persistence.entity;
+package com.consultorioturnos.entity;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -54,7 +53,7 @@ public class Paciente {
     @Column(name = "obra_social",insertable=false, updatable=false)
     private Integer obraSocial;
 
-    @Column(name = "grupo_sanguineo", nullable = false, length = 50)
+    @Column(name = "grupo_sanguineo", length = 50)
     private String grupoSanguineo;
 
     @Column(name = "fecha_alta", nullable = false)

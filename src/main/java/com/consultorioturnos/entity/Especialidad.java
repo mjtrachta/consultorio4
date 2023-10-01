@@ -1,4 +1,4 @@
-package com.consultorioturnos.persistence.entity;
+package com.consultorioturnos.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,32 +9,30 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "estados_usuarios")
+@Table(name = "especialidades")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EstadoUsuario {
+public class Especialidad {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_estado_usuarios")
-    private int idEstadoUsuarios;
+    @Column(name = "id_especialidad")
+    private int idEspecialidad;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
     @OneToMany
-    private List<Paciente> estado2;
-    @OneToMany
-    private List<Profesional> estado3;
+    private List<Profesional> especialidad2;
 
-
-    public int getIdEstadoUsuarios() {
-        return idEstadoUsuarios;
+    public int getIdEspecialidad() {
+        return idEspecialidad;
     }
 
-    public void setIdEstadoUsuarios(int idEstadoUsuarios) {
-        this.idEstadoUsuarios = idEstadoUsuarios;
+    public void setIdEspecialidad(int idEspecialidad) {
+        this.idEspecialidad = idEspecialidad;
     }
 
     public String getNombre() {
@@ -45,7 +43,3 @@ public class EstadoUsuario {
         this.nombre = nombre;
     }
 }
-
-
-
-

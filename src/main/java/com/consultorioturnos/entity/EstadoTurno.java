@@ -1,39 +1,38 @@
-package com.consultorioturnos.persistence.entity;
-
+package com.consultorioturnos.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
 import java.util.List;
 
+
 @Entity
-@Table(name = "especialidades")
+@Table(name = "estado_turno")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Especialidad {
+public class EstadoTurno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_especialidad")
-    private int idEspecialidad;
+    @Column(name = "id_estado_turno")
+    private int idEstadoTurno;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
     @OneToMany
-    private List<Profesional> especialidad2;
+    private List<Turno> estadoTurno2;
 
-    public int getIdEspecialidad() {
-        return idEspecialidad;
+    public int getIdEstadoTurno() {
+        return idEstadoTurno;
     }
 
-    public void setIdEspecialidad(int idEspecialidad) {
-        this.idEspecialidad = idEspecialidad;
+    public void setIdEstadoTurno(int idEstadoTurno) {
+        this.idEstadoTurno = idEstadoTurno;
     }
 
     public String getNombre() {

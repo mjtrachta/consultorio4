@@ -1,4 +1,5 @@
-package com.consultorioturnos.persistence.entity;
+package com.consultorioturnos.entity;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,32 +8,31 @@ import lombok.Setter;
 
 import java.util.List;
 
-
 @Entity
-@Table(name = "estado_turno")
+@Table(name = "consultorio")
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EstadoTurno {
+public class Consultorio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_estado_turno")
-    private int idEstadoTurno;
+    @Column(name = "id_consultorio")
+    private int idConsultorio;
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
 
     @OneToMany
-    private List<Turno> estadoTurno2;
+    private List<Turno> idConsultorio2;
 
-    public int getIdEstadoTurno() {
-        return idEstadoTurno;
+    public int getIdConsultorio() {
+        return idConsultorio;
     }
 
-    public void setIdEstadoTurno(int idEstadoTurno) {
-        this.idEstadoTurno = idEstadoTurno;
+    public void setIdConsultorio(int idConsultorio) {
+        this.idConsultorio = idConsultorio;
     }
 
     public String getNombre() {
